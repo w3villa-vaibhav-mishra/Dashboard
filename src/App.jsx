@@ -35,7 +35,7 @@ function App() {
  
   return (
     <>
-      <div className="flex justify-center">
+      <div className="flex justify-center ">
         <div className="flex  w-[100%] ">
           <Left/>
           <div className="w-full  flex flex-col">
@@ -43,7 +43,7 @@ function App() {
              <Navbar/>
             </div>
             
-            <div>
+            <div className>
             <Outlet/>
             </div>
           </div>

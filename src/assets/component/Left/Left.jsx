@@ -6,6 +6,8 @@ import { FaCog } from "react-icons/fa";
 import { SlCalender } from "react-icons/sl";
 import { IoTicketSharp } from "react-icons/io5";
 import { FaFile } from "react-icons/fa";
+import { Link } from "react-router-dom";
+
 import { LuFolderKanban } from "react-icons/lu";
 import { GrProjects } from "react-icons/gr";
 import { GrTasks } from "react-icons/gr";
@@ -26,22 +28,23 @@ function Left() {
                     </div>
         
         
-                    <div className="flex flex-col gap-4 p-4">
+                    <div className="flex flex-col gap-4 p-4 ">
                       <h1 className="uppercase">Dashbard</h1>
         
-                      <div className="flex items-center gap-2 p-2 rounded-md hover:bg-orange-600 cursor-pointer">
+                      <div className="flex items-center gap-2 p-2 rounded-md hover:bg-orange-600 cursor-pointer ">
                         <FaHome className="text-lg" />
-                        <span>Overview</span>
+                        <Link to="/home" className=" hover:underline">Overview</Link>
                       </div>
         
                       <div className="flex items-center gap-2 p-2 rounded-md hover:bg-orange-600 cursor-pointer">
                         <SlCalender className="text-lg" />
-                        <span>Calender</span>
+                        <Link to="/Table" className=" hover:underline">Table</Link>
                       </div>
         
                       <div className="flex items-center gap-2 p-2 rounded-md hover:bg-orange-600 cursor-pointer">
                         <IoTicketSharp className="text-lg" />
-                        <span>Tickets</span>
+                        <Link to="/form" className=" hover:underline">Form</Link>
+
                       </div>
         
                       <div className="flex items-center gap-2 p-2 rounded-md hover:bg-orange-600 cursor-pointer">
