@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Bar } from 'react-chartjs-2';
 import { Chart as ChartJS, CategoryScale, LinearScale, BarElement, Title, Tooltip, Legend } from 'chart.js';
 
-// Register necessary chart.js components
+
 ChartJS.register(
   CategoryScale,
   LinearScale,
@@ -16,59 +16,61 @@ function BarChart() {
   // Sample data for 12 months
   const data = {
     '12 months': {
-      labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'], // Months
+      labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'], 
       datasets: [
         {
           label: 'Hours',
-          data: [150, 180, 200, 250, 300, 400, 450, 350, 370, 420, 480, 500], // Hours data for 12 months
-          backgroundColor: 'rgb(236,146,18)', // Color for the Hours bars
-          borderColor: 'orange', // Border color for the Hours bars
-          borderWidth: 1, // Border width
+          data: [150, 180, 200, 250, 300, 400, 450, 350, 370, 420, 480, 500], 
+          backgroundColor: 'rgb(236,146,18)', 
+          borderColor: 'orange',
+          
+          borderWidth: 1, 
         },
         {
           label: 'Projects',
-          data: [120, 160, 200, 230, 270, 310, 350, 370, 410, 440, 480, 490], // Projects data for 12 months
-          backgroundColor: 'gray', // Color for the Projects bars
-          borderColor: 'gray', // Border color for the Projects bars
-          borderWidth: 1, // Border width
+          data: [120, 160, 200, 230, 270, 310, 350, 370, 410, 440, 480, 490],
+          backgroundColor: 'gray',
+          borderColor: 'gray', 
+          borderWidth: 1, 
         },
       ],
     },
     '7 days': {
-      labels: ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'], // Days of the week
+      labels: ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'], 
       datasets: [
         {
           label: 'Hours',
-          data: [20, 30, 25, 40, 35, 45, 50], // Hours data for 7 days
-          backgroundColor: 'orange', // Color for the Hours bars
-          borderColor: 'orange', // Border color for the Hours bars
-          borderWidth: 1, // Border width
+          data: [20, 30, 25, 40, 35, 45, 50], 
+          
+          backgroundColor: 'orange', 
+          borderColor: 'orange', 
+          borderWidth: 1, 
         },
         {
           label: 'Projects',
-          data: [18, 22, 19, 27, 26, 30, 35], // Projects data for 7 days
-          backgroundColor: 'gray', // Color for the Projects bars
-          borderColor: 'gray', // Border color for the Projects bars
-          borderWidth: 1, // Border width
+          data: [18, 22, 19, 27, 26, 30, 35], 
+          backgroundColor: 'gray', 
+          borderColor: 'gray', 
+          borderWidth: 1, 
         },
       ],
     },
     '30 days': {
-      labels: Array.from({ length: 30 }, (_, i) => `Day ${i + 1}`), // 30 days
+      labels: Array.from({ length: 30 }, (_, i) => `Day ${i + 1}`), 
       datasets: [
         {
           label: 'Hours',
-          data: new Array(30).fill(30).map((_, index) => 100 + index * 5), // Hours data for 30 days
-          backgroundColor: 'orange', // Color for the Hours bars
-          borderColor: 'orange', // Border color for the Hours bars
-          borderWidth: 1, // Border width
+          data: new Array(30).fill(30).map((_, index) => 100 + index * 5),
+          backgroundColor: 'orange', 
+          borderColor: 'orange', 
+          borderWidth: 1, 
         },
         {
           label: 'Projects',
-          data: new Array(30).fill(15).map((_, index) => 100 + index * 3), // Projects data for 30 days
-          backgroundColor: 'gray', // Color for the Projects bars
-          borderColor: 'gray', // Border color for the Projects bars
-          borderWidth: 1, // Border width
+          data: new Array(30).fill(15).map((_, index) => 100 + index * 3), 
+          backgroundColor: 'gray', 
+          borderColor: 'gray', 
+          borderWidth: 1, 
         },
       ],
     },
@@ -93,39 +95,39 @@ function BarChart() {
     },
   };
 
-  // State to store the selected time range
+  
   const [selectedRange, setSelectedRange] = useState('12 months');
 
-  // Options for customizing the chart
+  
   const options = {
     responsive: true,
     plugins: {
       legend: {
-        position: 'top', // Position of the legend
+        position: 'top', 
       },
       tooltip: {
-        enabled: true, // Enable tooltips
+        enabled: true, 
       },
     },
     scales: {
       y: {
-        min: 100, // Minimum value for the y-axis
-        max: 500, // Maximum value for the y-axis
+        min: 100, 
+        max: 500, 
         ticks: {
-          stepSize: 50, // Steps for the y-axis ticks
+          stepSize: 50, 
         },
       },
       x: {
         ticks: {
-          autoSkip: false, // Don't auto skip labels on the x-axis
+          autoSkip: false,
         },
       },
     },
     elements: {
       bar: {
-        borderWidth: 2, // Border width
-        borderRadius: { topLeft: 10, topRight: 10 }, // Rounded top corners
-        barThickness: 10, // Reduce bar width
+        borderWidth: 2, 
+        borderRadius: { topLeft: 10, topRight: 10 }, 
+        barThickness: 10, 
       },
     },
   };

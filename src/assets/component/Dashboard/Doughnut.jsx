@@ -2,7 +2,8 @@ import React from 'react';
 import { Chart as ChartJS, ArcElement, Tooltip, Legend } from 'chart.js';
 import { Doughnut } from 'react-chartjs-2';
 
-// Register Chart.js components
+
+
 ChartJS.register(ArcElement, Tooltip, Legend);
 
 function Doughnuts() {
@@ -11,30 +12,38 @@ function Doughnuts() {
     datasets: [
       {
         label: 'Poll',
-        data: [3, 3, 3, 1], // Data for each segment
-        backgroundColor: ['black', 'red', 'orange', 'blue'], // Background colors
-        borderColor: ['black', 'red', 'orange', 'blue'], // Border colors
-        borderWidth: 1, // Border width
+        data: [3, 3, 3, 1], 
+        backgroundColor: ['black', 'red', 'orange', 'blue'], 
+        
+        borderColor: ['black', 'red', 'orange', 'blue'],
+        
+        borderWidth: 1, 
+        
         
       },
     ],
   };
 
-  // Options to customize the chart
+  
+  
   const options = {
-    responsive: true, // Make the chart responsive
-    cutout: '70%', // This makes the donut thinner (adjust this value to your liking)
+    responsive: true,
+    
+    cutout: '70%', 
+    
     plugins: {
       tooltip: {
-        // enabled: false, // Disable tooltips on hover
+       
+        
       },
       legend: {
-        display: false, // Disable the legend above the chart
+        display: false, 
+        
       },
     },
   };
 
-  // Calculate percentages
+
   const total = data.datasets[0].data.reduce((a, b) => a + b, 0);
   const percentages = data.datasets[0].data.map((value) => ((value / total) * 100).toFixed(1));
 

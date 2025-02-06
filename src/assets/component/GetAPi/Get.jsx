@@ -7,7 +7,7 @@ const Get = () => {
   const [error, setError] = useState("");
   const [searchTerm, setSearchTerm] = useState("");
   const [currentPage, setCurrentPage] = useState(1);
-  const usersPerPage = 5; // Number of users per page
+  const usersPerPage = 5; 
 
   useEffect(() => {
     const fetchUsers = async () => {
@@ -24,14 +24,16 @@ const Get = () => {
     fetchUsers();
   }, []);
 
-  // Handle search
+
+
   const filteredUsers = users.filter((user) =>
     user.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
     user.email.toLowerCase().includes(searchTerm.toLowerCase()) ||
     user.username.toLowerCase().includes(searchTerm.toLowerCase())
   );
 
-  // Pagination Logic
+
+
   const indexOfLastUser = currentPage * usersPerPage;
   const indexOfFirstUser = indexOfLastUser - usersPerPage;
   const currentUsers = filteredUsers.slice(indexOfFirstUser, indexOfLastUser);
@@ -52,7 +54,8 @@ const Get = () => {
     <div className="container mx-auto p-4">
       <h1 className="text-2xl font-bold text-center mb-4">User Details</h1>
 
-      {/* Search Input */}
+      {/* Search Input */
+}
       <div className="mb-4">
         <input
           type="text"
@@ -95,7 +98,8 @@ const Get = () => {
             </table>
           </div>
 
-          {/* Pagination */}
+       
+       
           <div className="flex justify-between items-center mt-4">
             <button
               onClick={prevPage}

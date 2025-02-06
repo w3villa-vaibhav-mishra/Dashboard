@@ -23,7 +23,8 @@ function Navbar() {
     <div className="w-auto lg:w-full  ">
       <nav className=" dark:bg-gray-800 border-b-2 p-4 shadow-md">
         <div className="container mx-auto flex justify-between items-center">
-          {/* Search Bar */}
+          
+          
           <div className="relative w-full max-w-xs sm:max-w-sm md:max-w-md lg:max-w-lg">
             <FaSearch className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-500 dark:text-white" />
             <input
@@ -33,9 +34,11 @@ function Navbar() {
             />
           </div>
 
-          {/* Icons Section */}
+          
+          
           <div className="flex items-center space-x-4">
-            {/* Dark Mode Toggle */}
+            
+            
             <button
               onClick={toggleDarkMode}
               className="text-gray-500 dark:text-white p-2 rounded-full"
@@ -47,7 +50,8 @@ function Navbar() {
               )}
             </button>
 
-            {/* Notifications */}
+            
+            
             <div className="relative">
               <FaBell className="text-gray-500 dark:text-white text-xl" />
               <span className="absolute top-0 right-0 bg-red-500 text-white text-xs rounded-full px-1">
@@ -55,7 +59,8 @@ function Navbar() {
               </span>
             </div>
 
-            {/* Profile Icon */}
+            
+            
             <div>
               <FaUserCircle className="text-gray-500 dark:text-white text-2xl" />
             </div>

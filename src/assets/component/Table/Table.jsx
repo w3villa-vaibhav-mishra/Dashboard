@@ -74,20 +74,23 @@ function Table() {
     const [formData, setFormData] = useState({ id: null, name: "", designation: "", Year: "" });
     const [showForm, setShowForm] = useState(false);
 
-    // 🔍 Filter Data Based on Search Query
+    
+    
     const filteredData = data.filter(row =>
         row.name.toLowerCase().includes(searchText.toLowerCase()) ||
         row.designation.toLowerCase().includes(searchText.toLowerCase())
     );
 
-    // 🟢 CREATE: Add New Employee
+    
+    
     const handleAdd = () => {
         if (formData.name && formData.designation && formData.Year) {
             if (formData.id === null) {
-                // Add new record
+                
                 setData([...data, { ...formData, id: data.length + 1 }]);
             } else {
-                // Update existing record
+                
+                
                 setData(data.map(item => item.id === formData.id ? formData : item));
             }
             setFormData({ id: null, name: "", designation: "", Year: "" });
@@ -95,13 +98,14 @@ function Table() {
         }
     };
 
-    // 🟠 UPDATE: Load Selected Data into Form
+    
+    
     const handleEdit = (row) => {
         setFormData(row);
         setShowForm(true);
     };
 
-    // 🔴 DELETE: Remove Employee
+    
     const handleDelete = (id) => {
         setData(data.filter(item => item.id !== id));
     };
@@ -110,7 +114,8 @@ function Table() {
         <div className=" bg-white shadow-md rounded-lg  max-h-screen   mt-10 p-2  ">
             <h1 className="text-2xl font-bold mb-4 text-gray-800">Employee Details</h1>
 
-            {/* Search Input */}
+           
+           
             <input
                 type="text"
                 placeholder="Search by Name or Designation..."
@@ -119,7 +124,7 @@ function Table() {
                 onChange={(e) => setSearchText(e.target.value)}
             />
 
-            {/* Add Employee Button */}
+           
             {!showForm && (
                 <button
                     className="bg-blue-500 text-white px-4 py-2 rounded-lg mb-4 hover:bg-blue-600"
@@ -129,7 +134,6 @@ function Table() {
                 </button>
             )}
 
-            {/* Add/Edit Form (Visible Only When showForm is True) */}
             {showForm && (
                 <div className="bg-gray-100 p-4 rounded-lg mb-4 border-2 border-black">
                     <h2 className="text-xl font-semibold mb-3">
