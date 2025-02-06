@@ -1,6 +1,10 @@
 import React, { useState, useEffect } from "react";
 // import { FaHome, FaUserAlt, FaChartBar, FaCog } from "react-icons/fa";
 import { FaSearch, FaBell, FaUserCircle, FaSun, FaMoon, FaEllipsisV } from "react-icons/fa";
+import { CiClock2 } from "react-icons/ci";
+import one from "../Images/men1.jpg"
+import two from "../Images/men2.jpg"
+import three from "../Images/women.jpg"
 
 import { FaHome } from "react-icons/fa";
 import { FaUserAlt } from "react-icons/fa";
@@ -23,138 +27,49 @@ import Doughnuts from "./Doughnut";
 import LineChart from "./ProjactStaticsChart";
 import LeftCard from "./LeftCard";
 import DailyTask from "./DailyTask";
-import ProjectOverview from "./ProjectOverview"
+import ProjectOverview from "./ProjectOverview";
+import Cards from "../Dashboard/cards"
+// import one from "../images/profile.jpg"
 // import Navbar from "./assets/component/Dashboard/Navbar";
 function Dashboard() {
   return (
-    <div>
-         <div className="h-full flex flex-col gap-2 border-2 bg-slate-100 pt-2 pl-4">
-            <h1 className="text-lg font-bold mb-4">Dashboard &gt; Overview</h1>
-            {/* 4 cart section */}
-              <div className="h-[15%]  flex gap-2 dark:bg-gray-800">
-                <div className="w-[25%] h-[100%]  ">
-                  <div className="bg-white dark:bg-gray-800 p-6 h-[100%] rounded-2xl shadow-lg max-w-lg mx-auto">
-                    {/* Heading with line and three dots */}
-                    <div className="flex justify-between  ">
-                      <div className=" text-gray-900 dark:text-white">
-                        <h2 className="text-xl font-semibold">Project Dashboard</h2>
-                        <p className="dark:text-white">Create a dashboard design</p>
-                      </div>
-                      <div className=" ">
-                        <FaEllipsisV className="text-gray-500 dark:text-white cursor-pointer " />
-                      </div>
+    <div className="flex-1 flex flex-col gap-2 bg-slate-100 p-2 lg:pl-4 lg:max-h-screen ">
+      <h1 className="text-lg font-bold p-2">Dashboard &gt; Overview</h1>
 
-                    </div>
-                    <div className="h-[2px] bg-gray-300 my-3 dark:bg-gray-600"></div>
+      {/* 4 Card Section */}
+      <div className="p-2 lg:p-0  lg:max-h-[50%]">
+        <Cards />
+      </div>
 
-                    {/* Content section with left-aligned paragraph and right-aligned profile */}
-                    <div className="flex justify-between items-center">
-                      <p className="text-gray-700 dark:text-gray-300">Updated 5 Hours ago</p>
-                      <FaUserCircle className="text-gray-500 dark:text-white text-2xl cursor-pointer" />
-                    </div>
-                  </div>
-                  
-                </div>
-                <div className="w-[25%] h-[100%] ">
-                  <div className="bg-white dark:bg-gray-800 p-6 h-[100%] rounded-2xl shadow-lg max-w-lg mx-auto">
-                    {/* Heading with line and three dots */}
-                    <div className="flex justify-between  ">
-                      <div className=" text-gray-900 dark:text-white">
-                        <h2 className="text-xl font-semibold">Project Dashboard</h2>
-                        <p className="dark:text-white">Create a dashboard design</p>
-                      </div>
-                      <div className=" ">
-                        <FaEllipsisV className="text-gray-500 dark:text-white cursor-pointer " />
-                      </div>
+      {/* Middle Section */}
+      <div className="flex flex-col lg:flex-row gap-2 lg:max-h-[40%]  ">
+        <div className="  lg:w-[30%] bg-white shadow-lg rounded-3xl p-4 h-[320px] ">
+          <h1 className="text-lg font-bold ">Monthly Target</h1>
+          <div className="flex justify-center items-center h-[80%] ">
+            <Doughnuts />
+          </div>
+        </div>
 
-                    </div>
-                    <div className="h-[2px] bg-gray-300 my-3 dark:bg-gray-600"></div>
+        <div className="hidden md:flex flex-1 h-[320px] bg-white shadow-lg rounded-3xl overflow-hidden">
+          <LineChart />
+        </div>
+      </div>
 
-                    {/* Content section with left-aligned paragraph and right-aligned profile */}
-                    <div className="flex justify-between items-center">
-                      <p className="text-gray-700 dark:text-gray-300">Updated 5 Hours ago</p>
-                      <FaUserCircle className="text-gray-500 dark:text-white text-2xl cursor-pointer" />
-                    </div>
-                  </div>
-                  
-                </div>
-                <div className="w-[25%] h-[100%] ">
-                  <div className="bg-white dark:bg-gray-800 p-6 h-[100%] rounded-2xl shadow-lg max-w-lg mx-auto">
-                    {/* Heading with line and three dots */}
-                    <div className="flex justify-between  ">
-                      <div className=" text-gray-900 dark:text-white">
-                        <h2 className="text-xl font-semibold">Project Dashboard</h2>
-                        <p className="dark:text-white">Create a dashboard design</p>
-                      </div>
-                      <div className=" ">
-                        <FaEllipsisV className="text-gray-500 dark:text-white cursor-pointer " />
-                      </div>
-
-                    </div>
-                    <div className="h-[2px] bg-gray-300 my-3 dark:bg-gray-600"></div>
-
-                    {/* Content section with left-aligned paragraph and right-aligned profile */}
-                    <div className="flex justify-between items-center">
-                      <p className="text-gray-700 dark:text-gray-300">Updated 5 Hours ago</p>
-                      <FaUserCircle className="text-gray-500 dark:text-white text-2xl cursor-pointer" />
-                    </div>
-                  </div>
-                  
-                </div>
-                <div className="w-[25%] h-[100%] ">
-                  <div className="bg-white dark:bg-gray-800 p-6 h-[100%] rounded-2xl shadow-lg max-w-lg mx-auto">
-                    {/* Heading with line and three dots */}
-                    <div className="flex justify-between  ">
-                      <div className=" text-gray-900 dark:text-white">
-                        <h2 className="text-xl font-semibold">Project Dashboard</h2>
-                        <p className="dark:text-white">Create a dashboard design</p>
-                      </div>
-                      <div className=" ">
-                        <FaEllipsisV className="text-gray-500 dark:text-white cursor-pointer " />
-                      </div>
-
-                    </div>
-                    <div className="h-[2px] bg-gray-300 my-3 dark:bg-gray-600"></div>
-
-                    {/* Content section with left-aligned paragraph and right-aligned profile */}
-                    <div className="flex justify-between items-center">
-                      <p className="text-gray-700 dark:text-gray-300">Updated 5 Hours ago</p>
-                      <FaUserCircle className="text-gray-500 dark:text-white text-2xl cursor-pointer" />
-                    </div>
-                  </div>
-                  
-                </div>
-              </div>
-              <div className="h-[40%] w-full flex gap-2">
-                <div className="w-[30%]    bg-white rounded-3xl overflow-hidden flex flex-col p-4  ">
-                  <div className="h-[30px]">
-                  <h1 className="text-lg font-bold">Monthly Target</h1>
-                  </div>
-                  <div className=" justify-center items-center flex  h-full">
-                  <Doughnuts />
-                  </div>
-                  
-                </div>
-                <div className=" w-[70%] h-[100%] rounded-3xl bg-white overflow-hidden">
-                  <LineChart/>
-                </div>
-
-              </div>
-              <div className="h-full w-full flex gap-2">
-                      <div className=" w-[33%] rounded-3xl overflow-hidden">
-                        <LeftCard/>
-                      </div>
-                      <div className="rounded-3xl overflow-hidden w-[33%]">
-                        <ProjectOverview/>
-                      </div>
-                      <div className=" rounded-3xl w-[33%] overflow-hidden">
-                        <DailyTask/>
-                      </div>
-              </div>
-            </div>
-
+      {/* Bottom Section */}
+      <div className="flex flex-col lg:flex-row gap-2 lg:max-h-[340px]  ">
+        <div className="lg:w-1/3 bg-white shadow-lg rounded-3xl overflow-auto  overflow-y-scroll scrollbar-hide ">
+          <LeftCard />
+        </div>
+        <div className="lg:w-1/3 bg-white shadow-lg rounded-3xl overflow-y-scroll scrollbar-hide  ">
+          <ProjectOverview />
+        </div>
+        <div className="lg:w-1/3 bg-white shadow-lg rounded-3xl overflow-y-scroll scrollbar-hide  p-2">
+          <DailyTask />
+        </div>
+      </div>
     </div>
-  )
+  );
 }
+
 
 export default Dashboard

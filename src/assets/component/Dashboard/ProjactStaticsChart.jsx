@@ -140,7 +140,7 @@ function BarChart() {
             <button
               key={range}
               onClick={() => setSelectedRange(range)}
-              className={`px-2 py-1 rounded-lg text-sm ${selectedRange === range ? 'bg-blue-500 text-white' : 'bg-gray-200'}`}
+              className={`px-2 py-1 rounded-lg text-sm ${selectedRange === range ? 'bg-orange-500 text-white' : 'bg-gray-200'}`}
             >
               {range}
             </button>
@@ -149,7 +149,7 @@ function BarChart() {
       </div>
 
       {/* Bar chart */}
-      <Bar className=' max-h-[300px] min-w-full bg-white' data={data[selectedRange]} options={options} />
+      <Bar className=' max-h-[230px] min-w-full bg-white' data={data[selectedRange]} options={options} />
     </div>
   );
 }

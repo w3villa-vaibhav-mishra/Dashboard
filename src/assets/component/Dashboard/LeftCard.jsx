@@ -1,5 +1,10 @@
 import React from 'react';
-import { FaChevronRight } from 'react-icons/fa';  // Importing icon for arrow
+import { FaChevronRight } from 'react-icons/fa';
+import { FaPeopleGroup } from "react-icons/fa6";
+import { CiCreditCard2 } from "react-icons/ci";
+import { IoCheckmarkDoneCircle } from "react-icons/io5";
+import { CiTextAlignRight } from "react-icons/ci";
+
 
 const LeftCard = () => {
   return (
@@ -16,30 +21,105 @@ const LeftCard = () => {
       <div className="grid grid-rows-2 gap-6">
         {/* First Card */}
         <div className="bg-white p-4 rounded-lg shadow-md border border-gray-300">
-          <div className="flex justify-between items-center mb-4">
-            <h3 className="text-lg font-semibold text-gray-700">Heading 1</h3>
+          {/* First Section */}
+          <div className="flex items-center gap-4">
+            {/* Left - Profile Image */}
+            <CiTextAlignRight
+              className="w-6 h-6 rounded-full p-1 bg-orange-200 text-orange-600"
+            />
+
+            {/* Middle - Text Content */}
+            <div className="flex-1">
+              <h3 className="text-md font-semibold text-gray-700">Tiddo App</h3>
+              <p className="text-gray-500 text-sm ">10 Members</p>
+            </div>
+
+            {/* Right - See More */}
             <FaChevronRight className="text-gray-500 cursor-pointer" />
           </div>
-          <p className="text-gray-500">Some content for Heading 1...</p>
-          <div className="flex justify-between items-center mb-4">
-            <h3 className="text-lg font-semibold text-gray-700">Heading 1</h3>
+          <div className="flex items-center gap-4">
+            {/* Left - Profile Image */}
+            <FaPeopleGroup
+              className="w-6 h-6 rounded-full p-1 bg-blue-200 text-blue-600"
+            />
+
+            {/* Middle - Text Content */}
+            <div className="flex-1">
+              <h3 className="text-md font-semibold text-gray-700">Homie SAAS Application</h3>
+              <p className="text-gray-500 text-sm">24 Member</p>
+            </div>
+
+            {/* Right - See More */}
             <FaChevronRight className="text-gray-500 cursor-pointer" />
           </div>
-          <p className="text-gray-500">Some content for Heading 1...</p>
         </div>
 
         {/* Second Card */}
         <div className="bg-white p-4 rounded-lg shadow-md border border-gray-300">
-          <div className="flex justify-between items-center mb-4">
-            <h3 className="text-lg font-semibold text-gray-700">Heading 2</h3>
+          {/* Second Section */}
+          <div className="flex items-center gap-4">
+            {/* Left - Profile Image */}
+            <CiCreditCard2
+              className="w-6 h-6 rounded-full p-1 bg-orange-200 text-orange-600"
+            />
+
+            {/* Middle - Text Content */}
+            <div className="flex-1">
+              <h3 className="text-md font-semibold text-gray-700">In Progress</h3>
+              <p className="text-gray-500 text-sm">22 Projects</p>
+            </div>
+
+            {/* Right - See More */}
             <FaChevronRight className="text-gray-500 cursor-pointer" />
           </div>
-          <p className="text-gray-500">Some content for Heading 2...</p>
-          <div className="flex justify-between items-center mb-4">
-            <h3 className="text-lg font-semibold text-gray-700">Heading 2</h3>
+          <div className="flex items-center gap-4">
+            {/* Left - Profile Image */}
+            <IoCheckmarkDoneCircle
+              className="w-6 h-6 rounded-full p-1 bg-green-200 text-green-600"
+            />
+
+            {/* Middle - Text Content */}
+            <div className="flex-1">
+              <h3 className="text-md font-semibold text-gray-700">Completed</h3>
+              <p className="text-gray-500 text-sm">10 projects</p>
+            </div>
+
+            {/* Right - See More */}
             <FaChevronRight className="text-gray-500 cursor-pointer" />
           </div>
-          <p className="text-gray-500">Some content for Heading 2...</p>
+        </div>
+        <div className="bg-white p-4 rounded-lg shadow-md border border-gray-300">
+          {/* Second Section */}
+          <div className="flex items-center gap-4">
+            {/* Left - Profile Image */}
+            <CiCreditCard2
+              className="w-6 h-6 rounded-full p-1 bg-orange-200 text-orange-600"
+            />
+
+            {/* Middle - Text Content */}
+            <div className="flex-1">
+              <h3 className="text-md font-semibold text-gray-700">In Progress</h3>
+              <p className="text-gray-500 text-sm">22 Projects</p>
+            </div>
+
+            {/* Right - See More */}
+            <FaChevronRight className="text-gray-500 cursor-pointer" />
+          </div>
+          <div className="flex items-center gap-4">
+            {/* Left - Profile Image */}
+            <IoCheckmarkDoneCircle
+              className="w-6 h-6 rounded-full p-1 bg-blue-200 text-green-600"
+            />
+
+            {/* Middle - Text Content */}
+            <div className="flex-1">
+              <h3 className="text-md font-semibold text-gray-700">Completed</h3>
+              <p className="text-gray-500 text-sm">10 projects</p>
+            </div>
+
+            {/* Right - See More */}
+            <FaChevronRight className="text-gray-500 cursor-pointer" />
+          </div>
         </div>
       </div>
     </div>

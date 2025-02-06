@@ -4,15 +4,15 @@ import "react-circular-progressbar/dist/styles.css";
 
 const ProjectsOverview = () => {
   return (
-    <div className="p-6 bg-white rounded-xl shadow-lg w-full h-full flex flex-col justify-between">
-      <div className="flex justify-between items-center mb-4">
+    <div className="p-6 bg-white rounded-xl shadow-lg w-full min-h-full  flex flex-col ">
+      <div className="flex justify-between items-center ">
         <h2 className="text-lg font-bold">Projects Overview</h2>
         <button className="text-gray-500">⋮</button>
       </div>
-      <div className="flex justify-center">
-      <div className="flex justify-center items-center relative   w-60 h-60">
+      <div className="flex justify-center ">
+      <div className="flex justify-center items-center relative   pt-10 w-60 h-60">
         {/* Outer Circle */}
-        <div className="absolute w-full h-full">
+        <div className="absolute w-4/5 h-full">
           <CircularProgressbarWithChildren
             value={85}
             styles={buildStyles({
@@ -23,7 +23,7 @@ const ProjectsOverview = () => {
           />
         </div>
         {/* Middle Circle */}
-        <div className="absolute w-4/5 h-4/5">
+        <div className="absolute w-3/5 h-4/5">
           <CircularProgressbarWithChildren
             value={75}
             styles={buildStyles({
@@ -34,9 +34,9 @@ const ProjectsOverview = () => {
           />
         </div>
         {/* Inner Circle */}
-        <div className="absolute w-3/5 h-3/5">
+        <div className="absolute w-2/5 h-3/5">
           <CircularProgressbarWithChildren
-            value={65}
+            value={55}
             styles={buildStyles({
               strokeLinecap: "round",
               pathColor: "#F97316",
@@ -44,7 +44,7 @@ const ProjectsOverview = () => {
             })}
           >
             <div className="text-xl font-bold">65%</div>
-            <div className="text-sm text-gray-500">App Design</div>
+            <div className="text-[10px] text-gray-500">App Design</div>
           </CircularProgressbarWithChildren>
         </div>
       </div>

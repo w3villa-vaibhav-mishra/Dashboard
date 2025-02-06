@@ -4,6 +4,7 @@ import App from '../../../App';
 import Dashboard from '../Dashboard/Dashboard';
 import Table from '../Table/Table';
 import Forms from '../Form/Form';
+import Get from '../GetAPi/Get';
 
 function Router() {
   return (
@@ -13,6 +14,8 @@ function Router() {
     <Route path="/home" element={<Dashboard/>}></Route>
     <Route path="/table" element={<Table/>}></Route>
     <Route path="/form" element={<Forms/>}></Route>
+    <Route path="/get" element={<Get/>}></Route>
+
 
     </Route>
     

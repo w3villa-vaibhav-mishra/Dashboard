@@ -1,55 +1,64 @@
-import React, { useState, useEffect } from "react";
-// import { FaHome, FaUserAlt, FaChartBar, FaCog } from "react-icons/fa";
-import { FaSearch, FaBell, FaUserCircle, FaSun, FaMoon, FaEllipsisV } from "react-icons/fa";
-
-import { FaHome } from "react-icons/fa";
-import { FaUserAlt } from "react-icons/fa";
-import { FaChartBar } from "react-icons/fa";
-import { FaCog } from "react-icons/fa";
-import { SlCalender } from "react-icons/sl";
-import { IoTicketSharp } from "react-icons/io5";
-import { FaFile } from "react-icons/fa";
-import { LuFolderKanban } from "react-icons/lu";
-import { GrProjects } from "react-icons/gr";
-import { GrTasks } from "react-icons/gr";
-import { IoMdPeople } from "react-icons/io";
-import { FaBox } from "react-icons/fa6";
-import { FiLayout } from "react-icons/fi";
-import { MdContactSupport } from "react-icons/md";
-import { IoIosSettings } from "react-icons/io";
-import { IoMdLogOut } from "react-icons/io";
-import Doughnuts from "./assets/component/Dashboard/Doughnut";
-import LineChart from "./assets/component/Dashboard/ProjactStaticsChart";
-import LeftCard from "./assets/component/Dashboard/LeftCard";
-import DailyTask from "./assets/component/Dashboard/DailyTask";
-import ProjectOverview from "./assets/component/Dashboard/ProjectOverview"
-import Navbar from "./assets/component/Header/Navbar";
-import Dashboard from "./assets/component/Dashboard/Dashboard";
-import Left from "./assets/component/Left/Left";
+import React, { useState, useEffect, useRef } from "react";
+import { FaBars } from "react-icons/fa";
 import { Outlet } from "react-router-dom";
-
-
-
+import Navbar from "./assets/component/Header/Navbar";
+import Left from "./assets/component/Left/Left";
+import Temporary from "./assets/component/Temporary";
 
 function App() {
- 
+  const [isSidebarOpen, setIsSidebarOpen] = useState(false);
+  const sidebarRef = useRef(null);
+
+  // Close sidebar when clicking outside of it
+  useEffect(() => {
+    function handleClickOutside(event) {
+      if (sidebarRef.current && !sidebarRef.current.contains(event.target)) {
+        setIsSidebarOpen(false);
+      }
+    }
+
+    if (isSidebarOpen) {
+      document.addEventListener("mousedown", handleClickOutside);
+    }
+
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, [isSidebarOpen]);
+
   return (
-    <>
-      <div className="flex justify-center ">
-        <div className="flex  w-[100%] ">
-          <Left/>
-          <div className="w-full  flex flex-col">
-            <div className=" bg-white dark:bg-gray-800 ">
-             <Navbar/>
-            </div>
-            
-            <div className>
-            <Outlet/>
-            </div>
-          </div>
+    <div className="flex box-border  border-black ">
+      {/* Sidebar */}
+      <div
+        ref={sidebarRef}
+        className={`fixed inset-y-0 left-0 w-64 bg-gray-800 text-white z-50 shadow-md transition-transform duration-300 lg:h-screen
+          lg:relative lg:translate-x-0 
+          ${isSidebarOpen ? "translate-x-0" : "-translate-x-full"}`}
+      >
+        <Left onClose={() => setIsSidebarOpen(false)} /> {/* Pass onClose to close on menu click */}
+      </div>
+
+      {/* Main Content */}
+      <div className="flex-1 flex flex-col lg:h-screen ">
+        {/* Navbar with Hamburger Button */}
+        <div className="bg-white dark:bg-gray-800 w-full shadow-md flex items-center justify-between p-2  ">
+          {/* Hamburger Button for Small Screens */}
+          <button
+            onClick={() => setIsSidebarOpen(!isSidebarOpen)}
+            className="text-xl p-2 text-gray-800 dark:text-white lg:hidden"
+          >
+            <FaBars />
+          </button>
+          <Navbar />
+        </div>
+
+        {/* Page Content */}
+        <div className="flex-1 bg-slate-100 dark:bg-gray-900   overflow-hidden">
+          <Outlet />
+          {/* <Temporary/> */}
         </div>
       </div>
-    </>
+    </div>
   );
 }
 
